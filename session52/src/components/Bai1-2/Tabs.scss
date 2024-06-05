@@ -1,0 +1,27 @@
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+  
+.tabs ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+  
+.tabs li {
+    margin: 0 15px;
+}
+  
+.tabs a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+  
+.tabs a:hover {
+    color: #007BFF;
+}
