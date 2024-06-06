@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPrime(num) {
+            if (num <= 1) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                   return false;
+                }
+            }
+            return true;
+        }
+
+        async function isPrimeWithAsyncAwait(num) {
+            if (typeof num !== "number" || !Number.isInteger(num)) {
+                throw new Error("Input must be an integer");
+            }
+            return isPrime(num);
+        }
+
+        const number = 17;
+
+        (async () => {
+            try {
+                const result = await isPrimeWithAsyncAwait(number);
+                console.log(`${number} ${result ? "là" : "không là"} số nguyên tố`);
+            } catch (error) {
+                console.error("Lỗi:", error.message);
+            }
+        })();
+
+    </script>
+</body>
+</html>

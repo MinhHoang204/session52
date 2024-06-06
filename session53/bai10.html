@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myFindIndex(array, value, callback) {
+            for (let i = 0; i < array.length; i++) {
+                if (callback(array[i], value)) {
+                    return { foundIndex: i, array };
+                }
+            }
+            return { foundIndex: -1, array };
+        }
+
+        const myArray = [1, 2, 3, 4, 5];
+
+        function myCallback(element, value) {
+            return element === value;
+        }
+
+        const result = myFindIndex(myArray, 3, myCallback);
+        console.log(`Found Index: ${result.foundIndex}, Array: [${result.array.join(', ')}]`);
+        const resultNotFound = myFindIndex(myArray, 6, myCallback);
+        console.log(`Found Index: ${resultNotFound.foundIndex}, Array: [${resultNotFound.array.join(', ')}]`);
+
+    </script>
+</body>
+</html>

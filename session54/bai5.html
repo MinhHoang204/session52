@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPrime(num) {
+            if (num <= 1) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                   return false;
+                }
+            }
+            return true;
+        }
+
+        function isPrimeWithPromise(num) {
+            return new Promise((resolve, reject) => {
+                if (typeof num !== "number" || !Number.isInteger(num)) {
+                    reject(new Error("Input must be an integer"));
+                } else {
+                    resolve(isPrime(num));
+                }
+            });
+        }
+
+        const number = 17;
+
+        isPrimeWithPromise(number)
+            .then(result => {
+                console.log(`${number} ${result ? "là" : "không là"} số nguyên tố`);
+            })
+            .catch(error => {
+                console.error("Lỗi:", error.message);
+            });
+
+    </script>
+</body>
+</html>

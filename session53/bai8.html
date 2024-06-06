@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function myFind(array, value, callback) {
+            for (let i = 0; i < array.length; i++) {
+                if (callback(array[i], value)) {
+                    return { foundElement: array[i], array };
+                }
+            }
+            return { foundElement: null, array };
+        }
+
+        const myArray = [1, 2, 3, 4, 5];
+
+        function myCallback(element, value) {
+            return element === value;
+        }
+        const result = myFind(myArray, 3, myCallback);
+        console.log(`Found Element: ${result.foundElement}, Array: [${result.array.join(', ')}]`);
+        const resultNotFound = myFind(myArray, 6, myCallback);
+        console.log(`Found Element: ${resultNotFound.foundElement}, Array: [${resultNotFound.array.join(', ')}]`);
+    </script>
+</body>
+</html>

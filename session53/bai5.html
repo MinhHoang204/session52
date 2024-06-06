@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkCondition(condition, callback, delay){
+            setTimeout(() => {
+                const result = condition();
+                callback(result);
+            }, delay);
+        }
+        function myCondition() {
+            return Math.random() > 0.5;
+        }
+
+        function myCallback(result) {
+           console.log("Condition result:", result);
+        }
+
+        checkCondition(myCondition, myCallback, 1000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fibonacciRecursive(n) {
+            if (n <= 1) {
+               return n;
+            }
+            return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+        }
+
+        async function fibonacci(n) {
+            if (typeof n !== "number" || n <= 0 || !Number.isInteger(n)) {
+                throw new Error("Dữ liệu nhập vào không hợp lệ");
+            }
+            const result = await new Promise((resolve) => {
+                resolve(fibonacciRecursive(n));
+            });
+            return result;
+        }
+
+        const n = 10;
+
+        (async () => {
+            try {
+                const result = await fibonacci(n);
+                console.log(`Số Fibonacci thứ ${n} là ${result}`);
+            } catch (error) {
+                console.error("Lỗi:", error.message);
+            }
+        })();
+
+    </script>
+</body>
+</html>
