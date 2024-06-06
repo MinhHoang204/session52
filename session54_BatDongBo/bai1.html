@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const calculateBMI = (weight, height) => {
+            if(weight < 0 || height < 0){
+                console.log("Can nang va chieu cao khong duoc nho hon 0");
+            }
+
+            if(typeof weight === "number" && typeof height !== "number"){
+                console.log("Kieu du lieu chua chinh xac");
+            }
+
+            if (Number.isNaN(weight) || Number.isNaN(height)) {
+                console.log("Kieu du lieu khong phai NaN");
+            }
+            let result = weight / height;
+            return result;
+        };
+
+        try {
+            const result = calculateBMI(10, 0);
+            console.log(result);
+        } catch (error) {
+            console.log(error);
+        }
+        console.log(10);
+    </script>
+</body>
+</html>

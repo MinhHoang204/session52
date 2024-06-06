@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function addTask(taskName, taskList, callback) {
+            if (taskList.includes(taskName)) {
+                console.log(`Error: Task "${taskName}" already exists.`);
+            } else {
+                taskList.push(taskName);
+                callback(taskName);
+            }
+        }
+
+        function deleteTask(taskName, taskList, callback) {
+            const taskIndex = taskList.indexOf(taskName);
+            if (taskIndex === -1) {
+                console.log(`Error: Task "${taskName}" does not exist.`);
+            } else {
+                taskList.splice(taskIndex, 1);
+                callback(taskName);
+            }
+        }
+
+        function displayTasks(taskList) {
+            if (taskList.length === 0) {
+                console.log("The task list is empty.");
+            } else {
+                console.log("Current task list:");
+                taskList.forEach((task, index) => {
+                   console.log(`${index + 1}. ${task}`);
+                });
+            }
+        }
+
+        const taskList = [];
+
+        function addTaskCallback(taskName) {
+            console.log(`Task "${taskName}" added successfully.`);
+        }
+
+        function deleteTaskCallback(taskName) {
+            console.log(`Task "${taskName}" deleted successfully.`);
+        }
+
+        addTask("Learn JavaScript", taskList, addTaskCallback);
+        addTask("Build a project", taskList, addTaskCallback);
+        addTask("Learn JavaScript", taskList, addTaskCallback); // Should show error
+
+        displayTasks(taskList);
+        deleteTask("Build a project", taskList, deleteTaskCallback);
+        deleteTask("Go to the gym", taskList, deleteTaskCallback); // Should show error
+        displayTasks(taskList);
+
+    </script>
+</body>
+</html>

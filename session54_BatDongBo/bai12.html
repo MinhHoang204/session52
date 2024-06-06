@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function isPrime(num) {
+            if (num <= 1) return false;
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) return false;
+            }
+            return true;
+        }
+
+        function generatePrimes(n) {
+            return new Promise((resolve, reject) => {
+                if (typeof n !== "number" || n <= 0 || !Number.isInteger(n)) {
+                    reject(new Error("Dữ liệu nhập vào không hợp lệ"));
+                    return;
+                }
+
+                const primes = [];
+                for (let i = 2; i <= n; i++) {
+                    if (isPrime(i)) {
+                        primes.push(i);
+                    }
+                }
+                resolve(primes);
+            });
+        }
+
+        async function main(n) {
+            try {
+                const primes = await generatePrimes(n);
+                console.log(`Danh sách các số nguyên tố từ 2 đến ${n}:`, primes);
+            } catch (error) {
+                console.error("Lỗi:", error.message);
+            }
+        }
+
+        main(30);
+
+    </script>
+</body>
+</html>
