@@ -1,0 +1,9 @@
+{
+    "id": 1,
+    "title": "Post 1",
+    "content": "Content of post 1",
+    "thumbnail": "image1.jpg",
+    "created_at": "2024-06-01T10:00:00Z",
+    "created_by": "Author 1",
+    "comments": [1, 2]
+}

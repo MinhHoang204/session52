@@ -1,0 +1,48 @@
+[
+    {
+      "id": 1,
+      "title": "Post 1",
+      "content": "Content of post 1",
+      "thumbnail": "image1.jpg",
+      "created_at": "2024-06-01T10:00:00Z",
+      "created_by": "Author 1",
+      "comments": [1, 2]
+    },
+    {
+      "id": 2,
+      "title": "Post 2",
+      "content": "Content of post 2",
+      "thumbnail": "image2.jpg",
+      "created_at": "2024-06-02T11:00:00Z",
+      "created_by": "Author 2",
+      "comments": [3]
+    },
+    {
+      "id": 3,
+      "title": "Post 3",
+      "content": "Content of post 3",
+      "thumbnail": "image3.jpg",
+      "created_at": "2024-06-03T12:00:00Z",
+      "created_by": "Author 3",
+      "comments": []
+    },
+    {
+      "id": 4,
+      "title": "Post 4",
+      "content": "Content of post 4",
+      "thumbnail": "image4.jpg",
+      "created_at": "2024-06-04T13:00:00Z",
+      "created_by": "Author 4",
+      "comments": []
+    },
+    {
+      "id": 5,
+      "title": "Post 5",
+      "content": "Content of post 5",
+      "thumbnail": "image5.jpg",
+      "created_at": "2024-06-05T14:00:00Z",
+      "created_by": "Author 5",
+      "comments": []
+    }
+]
+  

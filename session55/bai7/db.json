@@ -1,0 +1,9 @@
+{
+    "postId": "67890",
+    "title": "New Post Title",
+    "content": "This is the content of the new post.",
+    "authorId": "12345",
+    "createdAt": "2024-06-08T12:34:56Z",
+    "updatedAt": "2024-06-08T12:34:56Z"
+}
+  

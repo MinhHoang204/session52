@@ -1,0 +1,8 @@
+{
+    "commentId": "12345",
+    "postId": "67890",
+    "content": "Updated comment content",
+    "authorId": "54321",
+    "createdAt": "2024-06-08T12:34:56Z",
+    "updatedAt": "2024-06-09T12:34:56Z"
+}

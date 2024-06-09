@@ -1,0 +1,8 @@
+{
+    "postId": "67890",
+    "title": "Updated Post Title",
+    "content": "This is the current content of the post.",
+    "authorId": "12345",
+    "createdAt": "2024-06-08T12:34:56Z",
+    "updatedAt": "2024-06-09T12:34:56Z"
+}
